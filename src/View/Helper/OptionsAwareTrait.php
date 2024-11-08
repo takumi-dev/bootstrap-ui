@@ -38,7 +38,7 @@ trait OptionsAwareTrait
      * @param array $data An array of HTML attributes and options.
      * @return array An array of HTML attributes and options.
      */
-    public function applyButtonClasses(array $data)
+    public function applyButtonClasses(array $data): array
     {
         if ($this->hasAnyClass($this->buttonClasses, $data)) {
             $data = $this->injectClasses(['btn'], $data);
@@ -56,7 +56,7 @@ trait OptionsAwareTrait
      * @param array $options An array of HTML attributes and options.
      * @return array An array of HTML attributes and options.
      */
-    public function renameClasses(array $classMap, array $options)
+    public function renameClasses(array $classMap, array $options): array
     {
         $options += ['class' => []];
         $options['class'] = $this->_toClassArray($options['class']);
@@ -78,7 +78,7 @@ trait OptionsAwareTrait
      * @param array $options An array of HTML attributes and options.
      * @return bool True if any one of the class names was found.
      */
-    public function hasAnyClass($classes, array $options)
+    public function hasAnyClass($classes, array $options): bool
     {
         $options += ['class' => []];
 
@@ -103,7 +103,7 @@ trait OptionsAwareTrait
      * @param array $options An array of HTML attributes and options.
      * @return array An array of HTML attributes and options.
      */
-    public function injectClasses($classes, array $options)
+    public function injectClasses($classes, array $options): array
     {
         $options += ['class' => [], 'skip' => []];
 
@@ -130,7 +130,7 @@ trait OptionsAwareTrait
      * @param array $options An array of HTML attributes and options.
      * @return bool False if one or more class(es) do not exist.
      */
-    public function checkClasses($classes, array $options)
+    public function checkClasses($classes, array $options): bool
     {
         if (empty($options['class'])) {
             return false;
@@ -154,7 +154,7 @@ trait OptionsAwareTrait
      * @param mixed $mixed One or more classes.
      * @return array Classes as array.
      */
-    protected function _toClassArray($mixed)
+    protected function _toClassArray($mixed): array
     {
         if (!is_array($mixed)) {
             $mixed = explode(' ', $mixed);

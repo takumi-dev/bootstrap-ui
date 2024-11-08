@@ -23,7 +23,7 @@ trait InputgroupTrait
      * @param \Cake\View\Form\ContextInterface $context The current form context.
      * @return string
      */
-    protected function _withInputGroup(array $data, ContextInterface $context)
+    protected function _withInputGroup(array $data, ContextInterface $context): string
     {
         $data += [
             'prepend' => null,
@@ -66,7 +66,7 @@ trait InputgroupTrait
      * @param array $data Widget data.
      * @return string
      */
-    protected function _addon($addon, $data)
+    protected function _addon($addon, $data): string
     {
         if (is_string($addon)) {
             $class = 'input-group-' . ($this->_isButton($addon) ? 'btn' : 'addon');
@@ -93,7 +93,7 @@ trait InputgroupTrait
      * @param string $html Markup to check.
      * @return bool TRUE if it's a button.
      */
-    protected function _isButton($html)
+    protected function _isButton($html): bool
     {
         return strpos($html, '<button') !== false || strpos($html, 'type="submit"') !== false;
     }
