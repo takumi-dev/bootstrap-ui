@@ -380,9 +380,9 @@ class FormHelper extends Helper
      *
      * @param string $fieldName The field's name.
      * @param array $options The options for the input element.
-     * @return string The generated input element.
+     * @return array|string The generated input element.
      */
-    protected function _getInput($fieldName, $options): string
+    protected function _getInput($fieldName, $options)
     {
         unset($options['help']);
 
