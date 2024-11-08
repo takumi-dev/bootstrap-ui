@@ -65,7 +65,7 @@ class FlashHelper extends Helper
     public function render($key = 'flash', array $options = []): string
     {
         if (!$this->request->getSession()->check("Flash.$key")) {
-            return null;
+            return '';
         }
 
         $stack = $this->request->getSession()->read("Flash.$key");
