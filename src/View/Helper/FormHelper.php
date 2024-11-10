@@ -104,7 +104,7 @@ class FormHelper extends Helper
     {
         $this->_defaultConfig = [
             'align' => 'default',
-            'errorClass' => null,
+            'errorClass' => 'has-error',
             'grid' => [
                 'left' => 2,
                 'middle' => 6,
